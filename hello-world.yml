@@ -1,14 +1,14 @@
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: hello-master
+  name: hello-world
   labels:
     app: hello
 spec:
   selector:
     matchLabels:
       app: hello
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: hello
-        image: dockerimagetest.azurecr.io/DockerimageTest/dockerimagetest
+        image: myfirstdocker.azurecr.io/myfirstimage/myfirstimage:v1
         resources:
           requests:
             cpu: 100m
